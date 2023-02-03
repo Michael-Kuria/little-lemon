@@ -1,8 +1,9 @@
 import React from "react";
+import "../App.css";
 
 export default function HeaderSection() {
   return (
-    <section>
+    <section className="header-section-container">
       <div className="header-section-left-container">
         <div>
           <p className="title">Little Lemon</p>

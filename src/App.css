@@ -1,0 +1,97 @@
+/* global */
+@import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100&family=Source+Sans+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700&family=Markazi+Text:wght@400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100&family=Source+Sans+Pro:wght@400;600;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  /* font-family: 'Markazi Text', serif; */
+  font-family: "Karla", sans-serif;
+}
+
+.title {
+  font-family: "Markazi Text", serif;
+  font-size: 64px;
+}
+
+.subtitle {
+  font-family: "Markazi Text", serif;
+  font-size: 40px;
+}
+
+/*Header starts here */
+header {
+  background-color: #edefee;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem 10rem 1rem 10rem;
+  align-items: center;
+}
+
+header img {
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+nav ul li {
+  display: block;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+nav ul li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -0.5rem;
+  height: 2px;
+  width: 0;
+  background-color: #495e57;
+}
+
+nav ul li:hover::after {
+  width: 100%;
+  transition: width 0.8s ease-in-out;
+}
+/* Main section start's here */
+main {
+}
+/* Header Section start's here */
+.header-section-container {
+  background-color: #495e57;
+  color: #edefee;
+  padding: 1rem 10rem 1rem 10rem;
+  position: relative;
+  display: flex;
+}
+.header-section-left-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 50%;
+}
+
+.header-section-left-container .title {
+  color: #f4ce14;
+}
+.header-section-left-container button {
+  background-color: #f4ce14;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  /* border: 1px solid #333333; */
+  border: none;
+  color: #333333;
+  overflow: hidden;
+}
+.header-section-right-container {
+  position: absolute;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 400px;
+  right: 10rem;
+  background-color: #495e57;
+}
