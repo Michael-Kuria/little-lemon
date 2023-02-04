@@ -23,33 +23,43 @@ const reviewers = [
     reviewText:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
   },
+  {
+    image: "/assets/person5.png",
+    name: "Kush",
+    noOfStars: 3,
+    reviewText:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+  },
 ];
 
 const Review = ({ image, name, reviewText, noOfStars }) => {
   return (
     <div>
-      <div className="reviewer-info-container">
-        <div className="reviewer-image-container">
-          <div className="reviewer-star-number-container">
-            <div className="star-container">
-              {Array(noOfStars)
-                .fill(true)
-                .map((_, i) => (
-                  <StarIcon key={i} />
-                ))}
+      <div className="reviewer-container">
+        <div className="reviewer-top-container">
+          <div className="reviewer-image-rating-container">
+            <div className="reviewer-star-number-container">
+              <div className="star-container">
+                {Array(noOfStars)
+                  .fill(true)
+                  .map((_, i) => (
+                    <StarIcon key={i} className="star" />
+                  ))}
+              </div>
+              <div className="bold">{noOfStars}</div>
             </div>
-            <div>{noOfStars}</div>
+            <div className="reviewer-image-container">
+              <img
+                src={image}
+                width=""
+                height=""
+                alt="this is a picture of a person"
+              />
+            </div>
           </div>
-          <div>
-            <img
-              src={image}
-              width=""
-              height="500px"
-              alt="this is a picture of food"
-            />
-          </div>
+          <div className="bold">{name}</div>
         </div>
-        <div>
+        <div className="reviewer-bottom-container">
           <p>{reviewText}</p>
         </div>
       </div>
@@ -60,11 +70,11 @@ const Review = ({ image, name, reviewText, noOfStars }) => {
 export default function Testmonials() {
   return (
     <section>
-      <div className="testmonials-container">
-        <div>
+      <div className="testmonials-section-container">
+        <div className="testimonials-header">
           <p className="title">Testimonials</p>
         </div>
-        <div>
+        <div className="reviews-container">
           {reviewers.map((item) => (
             <Review {...item} />
           ))}
