@@ -22,15 +22,17 @@ export default function AboutSection() {
         </div>
         <div className="about-section-right-container">
           <img
+            className="image1"
             src="/assets/Mario and Adrian A.jpg"
-            width=""
-            height="500px"
+            width="300px"
+            height="300px"
             alt="this is a picture of food"
           />
           <img
+            className="image2"
             src="/assets/Mario and Adrian B.jpg"
-            width=""
-            height="500px"
+            width="300px"
+            height="300px"
             alt="this is a picture of food"
           />
         </div>

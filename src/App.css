@@ -250,3 +250,35 @@ main {
 .star {
   color: #f4ce14;
 }
+
+/* About Section starts here */
+.about-section-container {
+  display: flex;
+  background-color: #edefee;
+  padding: 3rem 10rem 3rem 10rem;
+  gap: 2rem;
+  height: 600px;
+}
+
+.about-section-left-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.about-section-right-container {
+  position: relative;
+  height: fit-content;
+}
+.about-section-right-container .image1 {
+  position: absolute;
+  top: 0px;
+  object-fit: cover;
+}
+
+.about-section-right-container .image2 {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  object-fit: cover;
+}
