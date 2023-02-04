@@ -4,11 +4,11 @@ export default function Footer() {
   return (
     <footer>
       <div className="footer-container">
-        <div>
+        <div className="footer-logo">
           <img
             src="/assets/Asset 20@4x.png"
             width=""
-            height="500px"
+            height=""
             alt="this is a picture of food"
           />
         </div>
