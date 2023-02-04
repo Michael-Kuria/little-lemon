@@ -1,7 +1,9 @@
 /* global */
 @import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100&family=Source+Sans+Pro:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700&family=Markazi+Text:wght@400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100&family=Source+Sans+Pro:wght@400;600;700&display=swap");
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   /* font-family: 'Markazi Text', serif; */
@@ -67,6 +69,7 @@ main {
   padding: 1rem 10rem 1rem 10rem;
   position: relative;
   display: flex;
+  height: 350px;
 }
 .header-section-left-container {
   display: flex;
@@ -78,20 +81,91 @@ main {
 .header-section-left-container .title {
   color: #f4ce14;
 }
-.header-section-left-container button {
+.header-section-left-container button,
+.menu-section-header button {
   background-color: #f4ce14;
   padding: 0.5rem 1rem;
   border-radius: 10px;
   /* border: 1px solid #333333; */
   border: none;
   color: #333333;
-  overflow: hidden;
 }
 .header-section-right-container {
   position: absolute;
   border-radius: 10px;
   overflow: hidden;
-  height: 400px;
+  height: 340px;
   right: 10rem;
   background-color: #495e57;
+}
+.header-section-right-container img {
+  object-fit: cover;
+}
+
+/*Menu section starts here*/
+
+.menu-section-container {
+  background-color: #edefee;
+  padding: 1rem 10rem 1rem 10rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-section-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-section-header .title {
+  color: #333333;
+}
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  border-radius: 10px;
+  /* border-top-left-radius: 10px; */
+  /* border-top-right-radius: 10px; */
+  overflow: hidden;
+  background-color: #edefee;
+  flex-shrink: 0;
+  /* border: 1px solid #333333; */
+  box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.menu-image {
+  background-color: #edefee;
+  height: 200px;
+  width: 100%;
+}
+
+.menu-image img {
+  height: 200px;
+  width: 250px;
+  object-fit: cover;
+}
+
+.food-description-container {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.food-price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.food-title {
+  font-family: "Markazi Text", serif;
+  font-size: 32px;
+}
+.menu-section-scroller {
+  display: flex;
+  gap: 1rem;
+  overflow: scroll;
+  padding-bottom: 3rem;
+  padding-top: 2rem;
 }
