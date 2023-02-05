@@ -1,13 +1,18 @@
-import Footer from "./components/global/Footer";
 import Header from "./components/global/Header";
-import Main from "./components/Main";
+import Home from "./components/Home";
+import Reservations from "./components/Reservations";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
       <Header />
-      <Main />
-      <Footer />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/reservations" element={<Reservations />} />
+        </Routes>
+      </main>
     </>
   );
 }

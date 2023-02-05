@@ -13,11 +13,13 @@
 .title {
   font-family: "Markazi Text", serif;
   font-size: 64px;
+  white-space: nowrap;
 }
 
 .subtitle {
   font-family: "Markazi Text", serif;
   font-size: 40px;
+  white-space: nowrap;
 }
 
 /*Header starts here */
@@ -35,14 +37,18 @@ header img {
 nav ul {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 5rem;
+  white-space: nowrap;
+}
+nav ul li {
+  list-style: none;
+  position: relative;
 }
 
-nav ul li {
-  display: block;
+nav ul li a {
   text-decoration: none;
-  font-size: 18px;
-  position: relative;
+  font-size: 20px;
+  color: inherit;
 }
 
 nav ul li::after {
@@ -61,6 +67,7 @@ nav ul li:hover::after {
 }
 /* Main section start's here */
 main {
+  /* height: 100vh; */
 }
 /* Header Section start's here */
 .header-section-container {
@@ -315,6 +322,7 @@ main {
 }
 .footer-links-section p {
   font-size: 32px;
+  white-space: nowrap;
 }
 .footer-links-section ul li {
   display: block;
@@ -327,6 +335,7 @@ main {
 .footer-links-section ul {
   padding: 0;
   list-style-type: none;
+  white-space: nowrap;
 }
 
 .footer-links-section ul li::after {

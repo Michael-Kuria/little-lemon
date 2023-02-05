@@ -9,7 +9,7 @@ export default function Footer() {
             src="/assets/Asset 20@4x.png"
             width=""
             height=""
-            alt="this is a picture of food"
+            alt="this is food"
           />
         </div>
         <div className="footer-links-container">

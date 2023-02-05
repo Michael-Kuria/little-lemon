@@ -1,15 +1,26 @@
 import React from "react";
 import "../../App.css";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
   return (
     <nav>
       <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Reservations</li>
-        <li>Order Online</li>
-        <li>Login</li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="#aboutSection">About</Link>
+        </li>
+        <li>
+          <Link to="/reservations">Reservations</Link>
+        </li>
+        <li>
+          <Link to="/">Order Online</Link>
+        </li>
+        <li>
+          <Link to="/">Login</Link>
+        </li>
       </ul>
     </nav>
   );
