@@ -352,3 +352,17 @@ main {
   width: 100%;
   transition: width 0.8s ease-in-out;
 }
+
+/* Reservation starts here */
+.chakra-input, .chakra-textarea{
+  width: 100%;
+  padding: .8rem .3rem .8rem .3rem;
+  font-size: inherit;
+  border: 1px solid #495e57;
+  border-radius: 5px;
+  margin-top: .5rem;
+  outline: none;
+}
+.chakra-form-control{
+  width: 100%;
+}
