@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="footer-links-container">
           <div className="footer-links-section">
             <div>
-              <p>DoorMat Nav</p>
+              <p className="subtitle">DoorMat Nav</p>
             </div>
             <div>
               <ul>
@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
           <div className="footer-links-section">
             <div>
-              <p>Contacts</p>
+              <p className="subtitle">Contacts</p>
             </div>
             <div>
               <ul>
@@ -41,7 +41,7 @@ export default function Footer() {
           </div>
           <div className="footer-links-section">
             <div>
-              <p>Social Media Links</p>
+              <p className="subtitle">Social Media Links</p>
             </div>
             <div>
               <ul>

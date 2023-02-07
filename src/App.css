@@ -22,6 +22,29 @@
   white-space: nowrap;
 }
 
+
+/* Global responsive styles */
+@media screen and (max-width: 1000px){
+  .title {
+    font-size: 56px;
+  }
+  .subtitle {
+    font-size: 36px;
+  }
+}
+@media screen and (max-width: 750px){
+  *{
+    font-size: 14px;
+  }
+  .title {
+    font-size: 54px;
+  }
+  .subtitle {
+    font-size: 32px;
+  }
+
+}
+
 /*Header starts here */
 header {
   background-color: #edefee;
@@ -65,10 +88,31 @@ nav ul li:hover::after {
   width: 100%;
   transition: width 0.8s ease-in-out;
 }
+
+/* Responsive Header starts here */
+
+@media screen and (min-width: 1001px){
+  header {
+    transition: all 0.8s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  header{
+    padding: 1rem 2rem 1rem 2rem;
+  }
+  nav ul {
+    gap: 2rem;
+    transition: all 0.8s ease-in-out;
+  }
+
+}
 /* Main section start's here */
 main {
   /* height: 100vh; */
 }
+
+
 /* Header Section start's here */
 .header-section-container {
   background-color: #495e57;
@@ -109,6 +153,41 @@ main {
   object-fit: cover;
 }
 
+/* Responsive Header section starts here */
+@media screen and (min-width: 1001px){
+
+  .header-section-right-container{
+    transition: all 0.8s ease-in-out;
+  }
+  .header-section-container{
+    transition: all 0.8s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 1000px){
+
+  .header-section-container{
+    padding: 1rem 2rem 1rem 2rem;
+    transition: all 0.8s ease-in-out;
+  }
+  .header-section-right-container{
+    right: 2rem;
+    transition: all 0.8s ease-in-out;
+  }
+  
+}
+
+@media screen and (max-width: 750px){
+  .header-section-container{
+    flex-direction: column;
+    height:fit-content;
+    transition: all 0.8s ease-in-out;
+  }
+  .header-section-left-container{
+    width: 100%;
+  }
+}
+
 /*Menu section starts here*/
 
 .menu-section-container {
@@ -121,6 +200,7 @@ main {
 .menu-section-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .menu-section-header .title {
@@ -178,6 +258,29 @@ main {
   scrollbar-color: #495e57 #edefee;
 }
 
+/* Responsive Menu section starts here */
+@media screen and (min-width: 1001px){
+  .menu-section-container{
+    transition: all 0.8s ease-in-out;
+  }
+}
+@media screen and (max-width: 1000px){
+  .menu-section{
+    transition: all 0.8s ease-in-out;
+  }
+  .menu-section-container{
+    padding: 1rem 2rem 1rem 2rem;
+    transition: all 0.8s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 750px){
+  .menu-section-header{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 /* Testimonials starts here */
 .testmonials-section-container {
   background-color: #495e57;
@@ -186,7 +289,6 @@ main {
 
 .testimonials-header {
   width: 100%;
-  text-align: center;
 }
 
 .testimonials-header .title {
@@ -198,6 +300,7 @@ main {
   overflow-x: scroll;
   padding-bottom: 2rem;
   scrollbar-color: #edefee #495e57;
+  margin-top: 2rem;
 }
 .reviews-container::-webkit-scrollbar-track {
   background: #495e57;
@@ -258,6 +361,21 @@ main {
   color: #f4ce14;
 }
 
+/* Responsive Testimonials section starts here */
+@media screen and (min-width: 1001px){
+  .testmonials-section-container{
+    transition: all 0.8s ease-in-out;
+  }
+}
+@media screen and (max-width: 1000px){
+  .testmonials-section-container{
+    padding-left:  2rem;
+    padding-right: 2rem;
+    transition: all 0.8s ease-in-out;
+  }
+}
+
+
 /* About Section starts here */
 .about-section-container {
   display: flex;
@@ -290,6 +408,46 @@ main {
   object-fit: cover;
 }
 
+/* Responsive About section starts here */
+@media screen and (min-width: 1001px){
+  .about-section-container{
+    transition: all 0.8s ease-in-out;
+  }
+}
+@media screen and (max-width: 1000px){
+  .about-section-container{
+    padding: 2rem;
+    transition: all 0.8s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 750px){
+  .about-section-container{
+    flex-direction: column;
+    gap: 1rem;
+    height: fit-content;
+    
+  }
+  .about-section-left-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .about-section-right-container {
+    position: relative;
+  }
+  .about-section-right-container .image1 {
+    position: relative;
+    width: 100%;
+    left:0px;
+  }
+  
+  .about-section-right-container .image2 {
+    visibility: hidden;
+  }
+}
+
 /* Footer starts here */
 .footer-container {
   display: grid;
@@ -307,7 +465,6 @@ main {
 .footer-logo img {
   height: 200px;
   width: 100px;
-
   object-fit: fill;
 }
 .footer-links-container {
@@ -320,8 +477,9 @@ main {
   flex-direction: column;
   gap: 1rem;
 }
-.footer-links-section p {
-  font-size: 32px;
+
+.footer-links-section .subtitle{
+  color: #f4ce14;
   white-space: nowrap;
 }
 .footer-links-section ul li {
@@ -351,6 +509,49 @@ main {
 .footer-links-section ul li:hover::after {
   width: 100%;
   transition: width 0.8s ease-in-out;
+}
+
+/* Responsive footer section starts here */
+@media screen and (min-width: 1001px){
+  .footer-container{
+    transition: all 0.8s ease-in-out;
+  }
+}
+@media screen and (max-width: 1000px){
+  .footer-container{
+    padding: 2rem;
+    transition: all 0.8s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 750px){
+  .footer-container{
+    transition: all 0.8s ease-in-out;
+    grid-template-columns: 100%;
+    justify-items: center;
+  }
+  .footer-links-container{
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .footer-links-section {
+    padding-right: 0;
+    align-items: center;
+    text-align: center;
+    gap: .2rem;
+  }
+  .footer-links-section ul{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+  }
+
+  .footer-links-section ul li{
+    font-size: 14px;
+
+  }
+
 }
 
 /* Reservation starts here */

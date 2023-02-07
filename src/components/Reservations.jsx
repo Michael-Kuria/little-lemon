@@ -24,7 +24,7 @@ export default function Reservations() {
             className="title"
             style={{ fontSize: "32px", color: "#edefee" }}
           >
-            Book a table
+            Reservations
           </span>
         </Box>
         <Box>
