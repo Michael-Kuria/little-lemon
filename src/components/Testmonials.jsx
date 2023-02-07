@@ -18,7 +18,7 @@ const reviewers = [
   },
   {
     image: "/assets/person4.png",
-    name: "Alex",
+    name: "Nelly",
     noOfStars: 5,
     reviewText:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",

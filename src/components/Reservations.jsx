@@ -12,11 +12,14 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import React from "react";
+import "../App.css";
+import { useWidth } from "../Width";
 export default function Reservations() {
+  const [hideImage] = useWidth();
   return (
     <>
       <Box>
-        <Box p={"1rem 10rem 1rem 10rem"} backgroundColor="#495e57">
+        <Box backgroundColor="#495e57" className="reservations-title-box">
           <span className="title" style={{ color: "#f4ce14" }}>
             Little Lemon /
           </span>
@@ -32,8 +35,8 @@ export default function Reservations() {
             <Grid
               templateColumns="repeat(2, 1fr)"
               gap="2rem"
-              p={"1rem 10rem 1rem 10rem"}
               backgroundColor="#edefee"
+              className="form-container"
             >
               <GridItem>
                 <VStack alignItems="flex-start">
@@ -82,14 +85,16 @@ export default function Reservations() {
               <GridItem>
                 <VStack alignItems="flex-start">
                   <p className="subtitle">Table Details</p>
-                  <Box>
-                    <Image
-                      src="assets/restaurant.jpg"
-                      alt="restautant"
-                      boxSize="250px"
-                      objectFit="cover"
-                    />
-                  </Box>
+                  {hideImage && (
+                    <Box>
+                      <Image
+                        src="assets/restaurant.jpg"
+                        alt="restautant"
+                        boxSize="250px"
+                        objectFit="cover"
+                      />
+                    </Box>
+                  )}
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut.
@@ -134,9 +139,9 @@ export default function Reservations() {
               </GridItem>
             </Grid>
             <HStack
-              p={"1rem 10rem 1rem 10rem"}
               backgroundColor="#495e57"
               justifyContent="flex-end"
+              className="form-container"
             >
               <Box>
                 <Button

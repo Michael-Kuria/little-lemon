@@ -44,6 +44,16 @@
   }
 
 }
+@media screen and (max-width: 600px){
+
+  .title {
+    font-size: 45px;
+  }
+  .subtitle {
+    font-size: 24px;
+  }
+
+}
 
 /*Header starts here */
 header {
@@ -55,8 +65,7 @@ header {
   align-items: center;
 }
 
-header img {
-}
+
 nav ul {
   display: flex;
   flex-direction: row;
@@ -174,7 +183,6 @@ main {
     right: 2rem;
     transition: all 0.8s ease-in-out;
   }
-  
 }
 
 @media screen and (max-width: 750px){
@@ -211,12 +219,9 @@ main {
   flex-direction: column;
   width: 250px;
   border-radius: 10px;
-  /* border-top-left-radius: 10px; */
-  /* border-top-right-radius: 10px; */
   overflow: hidden;
   background-color: #edefee;
   flex-shrink: 0;
-  /* border: 1px solid #333333; */
   box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -247,7 +252,8 @@ main {
 
 .food-title {
   font-family: "Markazi Text", serif;
-  font-size: 32px;
+  font-size: 24px;
+  font-weight: bold;
 }
 .menu-section-scroller {
   display: flex;
@@ -272,12 +278,27 @@ main {
     padding: 1rem 2rem 1rem 2rem;
     transition: all 0.8s ease-in-out;
   }
+  .food-title{
+    font-weight:lighter;
+  }
 }
 
 @media screen and (max-width: 750px){
   .menu-section-header{
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .menu-image {
+    height: 150px;
+    width: 100%;
+  }
+  .menu-image img {
+    height: 150px;
+    object-fit: cover;
+  }
+  .menu-container{
+    width: 200px;
   }
 }
 
@@ -315,10 +336,11 @@ main {
   flex-shrink: 0;
   box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  gap: .5rem;
 }
 .reviewer-top-container {
   display: flex;
-  gap: 1rem;
+  gap: .8rem;
   align-items: center;
 }
 .reviewer-image-rating-container {
@@ -326,8 +348,8 @@ main {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
-  padding: 0.5rem;
-  width: 150px;
+  padding: 0px;
+  width: fit-content;
 }
 .reviewer-image-container {
   background-color: #495e57;
@@ -347,10 +369,11 @@ main {
 
 .reviewer-star-number-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
   align-items: center;
   width: 100%;
+  padding: 0;
 }
 
 .star-container {
@@ -372,6 +395,19 @@ main {
     padding-left:  2rem;
     padding-right: 2rem;
     transition: all 0.8s ease-in-out;
+  }
+}
+@media screen and (max-width: 750px) {
+  .reviewer-image-container{
+    width: 70px;
+    height: 70px;
+  }
+  .reviewer-image-container img{
+    width: 70px;
+    height: 70px;
+  }
+  .reviewer-container{
+    width: 200px;
   }
 }
 
@@ -566,4 +602,29 @@ main {
 }
 .chakra-form-control{
   width: 100%;
+}
+
+.form-container{
+  padding: 1rem 10rem 1rem 10rem;
+}
+.reservations-title-box{
+  padding: 1rem 10rem 1rem 10rem;
+}
+
+/* Responsive Reservation starts here */
+
+@media screen and (max-width: 1000px){
+  .form-container{
+    padding: 2rem;
+  }
+  .reservations-title-box{
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 750px){
+  .css-1gvp5h0{
+    grid-column: span 2;
+  }
+
 }
