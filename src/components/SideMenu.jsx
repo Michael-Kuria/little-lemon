@@ -11,7 +11,7 @@ import React from "react";
 
 export default function SideMenu({ isOpen, onClose }) {
   return (
-    <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
+    <Drawer placement="left" onClose={onClose} isOpen={isOpen} size="xs">
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton />

@@ -58,7 +58,7 @@ const food = [
 ];
 export default function MenuSection() {
   return (
-    <section className="menu-section">
+    <section id="menu-section">
       <div className="menu-section-container">
         <div className="menu-section-header">
           <p className="title">This Week's Special</p>

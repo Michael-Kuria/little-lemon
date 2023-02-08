@@ -71,7 +71,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### What is to follow
 
-- Implementation of the form page
-- making the pages responsive, even on bigger screen
-- Cleaning up the menu section & testimonials in css
+- Implementation of the form page -done
+- making the pages responsive, even on bigger screen - done
+- Cleaning up the menu section & testimonials in css - done
 - implemetation of navigation on the home page to the about section
+- implement the drawer

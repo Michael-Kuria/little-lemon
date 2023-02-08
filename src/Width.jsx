@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 export const useWidth = () => {
-  const [hideImage, setHideImage] = useState(false);
+  const [hideImage, setHideImage] = useState(window.innerWidth > 750);
 
   useEffect(() => {
     function handleResize() {
