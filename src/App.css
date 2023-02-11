@@ -606,6 +606,13 @@ main {
 .chakra-form-control{
   width: 100%;
 }
+.chakra-form__error-message{
+  color: red;
+}
+
+.error{
+  border: 1px solid red;
+}
 
 .form-container{
   padding: 1rem 10rem 1rem 10rem;

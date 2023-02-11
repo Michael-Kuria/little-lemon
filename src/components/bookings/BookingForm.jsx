@@ -2,6 +2,7 @@ import {
   Box,
   VStack,
   FormControl,
+  FormErrorMessage,
   FormLabel,
   Input,
   Button,
@@ -9,24 +10,39 @@ import {
   Select,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-
+import * as Yup from "yup";
+import { useFormik } from "formik";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "../../App.css";
 
-export default function BookingForm() {
-  var h = document.querySelector("header").offsetHeight;
-  const [startDate, setStartDate] = useState(new Date());
-  const [availableTimes, setAvailableTimes] = useState([
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-  ]);
+export default function BookingForm({ availableTimes, dispatch }) {
+  const [occasionDate, setOccasionDate] = useState(new Date());
+
+  const formik = useFormik({
+    initialValues: {
+      date: occasionDate,
+      time: "",
+      numberOfGuests: 1,
+      occasion: "birthday",
+    },
+    onSubmit: (values) => {
+      console.log(values);
+    },
+    validationSchema: Yup.object({
+      date: Yup.date().required("Required"),
+      time: Yup.string().required("Required"),
+      numberOfGuests: Yup.number()
+        .min(1, "Too little")
+        .max(10, "Too big")
+        .required("Required"),
+      occasion: Yup.string().required("Required"),
+    }),
+  });
 
   return (
     <>
-      <Box height={`calc(100vh - ${h}px)`} backgroundColor="#edefee">
+      <Box height={`calc(100vh - ${76}px)`} backgroundColor="#edefee">
         <Box
           backgroundColor="#495e57"
           className="reservations-title-box"
@@ -48,42 +64,75 @@ export default function BookingForm() {
           alignItems="center"
           paddingTop="2rem"
         >
-          <form>
-            <VStack width="400px" alignItems="center">
-              <FormControl>
-                <FormLabel htmlFor="date">Date</FormLabel>
+          <form onSubmit={formik.handleSubmit}>
+            <VStack width="400px" alignItems="center" gap={4}>
+              <FormControl
+                isInvalid={formik.touched.date && formik.errors.date}
+              >
+                <FormLabel htmlFor="date">*Date</FormLabel>
                 <DatePicker
+                  id="date"
                   className="date-picker"
-                  selected={startDate}
+                  selected={occasionDate}
                   // showTimeSelect
                   // dateFormat="Pp"
-                  onChange={(date) => setStartDate(date)}
+                  {...formik.getFieldProps("date")}
+                  onChange={(date) => {
+                    setOccasionDate(date);
+                    dispatch({ date: date });
+                  }}
                 />
+                <FormErrorMessage>{formik.errors.date}</FormErrorMessage>
               </FormControl>
-              <FormControl>
-                <FormLabel htmlFor="time">Time</FormLabel>
-                <Select placeholder="Select Time">
+              <FormControl
+                isInvalid={formik.touched.time && formik.errors.time}
+              >
+                <FormLabel htmlFor="time">*Time</FormLabel>
+                <Select
+                  placeholder="Select Time"
+                  id="time"
+                  {...formik.getFieldProps("time")}
+                >
                   {availableTimes.map((time) => (
                     <option value={time}>{time}</option>
                   ))}
                 </Select>
+                <FormErrorMessage>{formik.errors.time}</FormErrorMessage>
               </FormControl>
-              <FormControl>
-                <FormLabel htmlFor="numberOfGuests">Number Of Guests</FormLabel>
+              <FormControl
+                isInvalid={
+                  formik.touched.numberOfGuests && formik.errors.numberOfGuests
+                }
+              >
+                <FormLabel htmlFor="numberOfGuests">
+                  *Number Of Guests
+                </FormLabel>
                 <Input
                   id="numberOfGuests"
                   name="numberOfGuests"
                   type="number"
                   min="1"
                   max="10"
+                  {...formik.getFieldProps("numberOfGuests")}
                 />
+                <FormErrorMessage>
+                  {formik.errors.numberOfGuests}
+                </FormErrorMessage>
               </FormControl>
-              <FormControl>
-                <FormLabel htmlFor="seatingOptions">Seating Options</FormLabel>
-                <Select placeholder="Select Occasion">
+              <FormControl
+                isInvalid={formik.touched.occasion && formik.errors.occasion}
+              >
+                <FormLabel htmlFor="occasion" id="occasion">
+                  *Seating Options
+                </FormLabel>
+                <Select
+                  placeholder="Select Occasion"
+                  {...formik.getFieldProps("occasion")}
+                >
                   <option value="birthday">Birthday</option>
                   <option value="anniversary">Anniversary</option>
                 </Select>
+                <FormErrorMessage>{formik.errors.occasion}</FormErrorMessage>
               </FormControl>
               <HStack width="100%" justifyContent="flex-end">
                 <Button
