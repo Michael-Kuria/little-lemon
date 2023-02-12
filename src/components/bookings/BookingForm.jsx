@@ -16,7 +16,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "../../App.css";
 
-export default function BookingForm({ availableTimes, dispatch }) {
+export default function BookingForm({ availableTimes, dispatch, submitForm }) {
   const [occasionDate, setOccasionDate] = useState(new Date());
 
   const formik = useFormik({
@@ -27,7 +27,7 @@ export default function BookingForm({ availableTimes, dispatch }) {
       occasion: "birthday",
     },
     onSubmit: (values) => {
-      console.log(values);
+      submitForm(values);
     },
     validationSchema: Yup.object({
       date: Yup.date().required("Required"),
@@ -93,8 +93,10 @@ export default function BookingForm({ availableTimes, dispatch }) {
                   id="time"
                   {...formik.getFieldProps("time")}
                 >
-                  {availableTimes.map((time) => (
-                    <option value={time}>{time}</option>
+                  {availableTimes.map((time, index) => (
+                    <option key={index} value={time}>
+                      {time}
+                    </option>
                   ))}
                 </Select>
                 <FormErrorMessage>{formik.errors.time}</FormErrorMessage>

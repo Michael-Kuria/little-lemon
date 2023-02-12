@@ -1,28 +1,37 @@
-import React, { useReducer, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
+import { useNavigate } from "react-router";
 import BookingForm from "./BookingForm";
 
 const updateTimes = (availableTimes, action) => {
-  // {change the state based on action.date}
-  return availableTimes;
+  return window["fetchAPI"](action.date);
 };
 
 const initializeTimes = () => {
-  return [];
+  return window["fetchAPI"](new Date());
 };
 
-// function updateTimes(state, action) {
-//   // {change the state based on action.date}
-// }
-// function initializeTimes() {}
-
-// //   const [availableTimes, setAvailableTimes] = useState([
-// //     "17:00",
-// //     "18:00",
-// //     "19:00",
-// //     "20:00",
-// //   ]);
-
 export default function BookingPage(props) {
-  const [availableTimes, dispatch] = useReducer(updateTimes, []);
-  return <BookingForm availableTimes={availableTimes} dispatch={dispatch} />;
+  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
+  const [bookingSuccessfull, setBookingSuccessfull] = useState(false);
+  const navigate = useNavigate();
+
+  function submitForm(data) {
+    if (window["submitAPI"](data)) {
+      setBookingSuccessfull(true);
+    }
+  }
+
+  useEffect(() => {
+    if (bookingSuccessfull) {
+      navigate("/confirmedBooking");
+    }
+  }, [bookingSuccessfull]);
+
+  return (
+    <BookingForm
+      availableTimes={availableTimes}
+      dispatch={dispatch}
+      submitForm={submitForm}
+    />
+  );
 }
