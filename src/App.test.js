@@ -9,6 +9,14 @@ test("Renders the BookingForm heading", () => {
   expect(headingElement).toBeInTheDocument();
 });
 
+test("Checking the functionality of initiliazeTimes in BookingPage", () => {
+  render(<BookingPage />);
+});
+
+test("Checking the functionality of updateTimes in BookingPage", () => {
+  render(<BookingPage />);
+});
+
 // test('renders learn react link', () => {
 //   render(<App />);
 //   const linkElement = screen.getByText(/learn react/i);

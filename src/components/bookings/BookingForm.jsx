@@ -79,7 +79,7 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
                   {...formik.getFieldProps("date")}
                   onChange={(date) => {
                     setOccasionDate(date);
-                    dispatch({ date: date });
+                    dispatch(date);
                   }}
                 />
                 <FormErrorMessage>{formik.errors.date}</FormErrorMessage>

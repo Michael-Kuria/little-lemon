@@ -2,8 +2,8 @@ import React, { useEffect, useReducer, useState } from "react";
 import { useNavigate } from "react-router";
 import BookingForm from "./BookingForm";
 
-const updateTimes = (availableTimes, action) => {
-  return window["fetchAPI"](action.date);
+const updateTimes = (availableTimes, date) => {
+  return window["fetchAPI"](date);
 };
 
 const initializeTimes = () => {
