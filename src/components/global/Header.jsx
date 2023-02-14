@@ -4,19 +4,16 @@ import "../../App.css";
 import { useWidth } from "../../Width";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useDisclosure } from "@chakra-ui/react";
-import SideMenu from "../SideMenu";
 
-export default function Header() {
+export default function Header({ toggleDrawer }) {
   const [hideNav] = useWidth();
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <header>
-      <SideMenu isOpen={isOpen} onClose={onClose} />
-      <div>
+      <div className="header-logo-section">
         {!hideNav && (
           <div>
-            <button onClick={onOpen}>
+            <button onClick={toggleDrawer(true)}>
               <MenuIcon />
             </button>
           </div>

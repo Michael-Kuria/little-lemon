@@ -24,7 +24,7 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
       date: occasionDate,
       time: "",
       numberOfGuests: 1,
-      occasion: "birthday",
+      occasion: "",
     },
     onSubmit: (values) => {
       submitForm(values);
@@ -65,7 +65,7 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
           paddingTop="2rem"
         >
           <form onSubmit={formik.handleSubmit}>
-            <VStack width="400px" alignItems="center" gap={4}>
+            <VStack className="form-inputs" alignItems="center" gap={4}>
               <FormControl
                 isInvalid={formik.touched.date && formik.errors.date}
               >
@@ -139,12 +139,12 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
               <HStack width="100%" justifyContent="flex-end">
                 <Button
                   type="submit"
-                  backgroundColor="#f4ce14"
-                  color="#333333"
-                  outline="none"
-                  border="1px solid #333333"
-                  padding="1rem 2rem"
-                  borderRadius={10}
+                  className={`btn ${
+                    !formik.isValid || Object.keys(formik.touched).length === 0
+                      ? "disabled"
+                      : ""
+                  }`}
+                  disabled={!formik.isValid}
                 >
                   Submit Reservation
                 </Button>

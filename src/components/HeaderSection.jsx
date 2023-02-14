@@ -34,7 +34,7 @@ export default function HeaderSection() {
           </p>
         </div>
         <div>
-          <button>Reserve a table</button>
+          <button className="btn">Reserve a table</button>
         </div>
       </div>
       {hideImage && (

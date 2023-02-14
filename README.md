@@ -88,3 +88,6 @@ The next step is to validate the behavior of the updateTimes and initializeTimes
 
 // change available times into useReducer();
 create unit test for initilize times, updatetimes and submit form
+
+- style the buttons to make them clickable - done
+- Unit tests for form fields

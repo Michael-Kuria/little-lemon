@@ -1,40 +1,45 @@
-import {
-  Drawer,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerBody,
-  DrawerCloseButton,
-  Box,
-} from "@chakra-ui/react";
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
 import { Link } from "react-router-dom";
-import React from "react";
 
-export default function SideMenu({ isOpen, onClose }) {
+export default function SideMenu({ state, toggleDrawer }) {
+  const list = () => (
+    <Box
+      role="presentation"
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
+    >
+      <List>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <Link to="/">Home</Link>
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <Link to="/reservations">Reservations</Link>
+          </ListItemButton>
+        </ListItem>
+      </List>
+    </Box>
+  );
+
   return (
-    <Drawer placement="left" onClose={onClose} isOpen={isOpen} size="xs">
-      <DrawerOverlay />
-      <DrawerContent>
-        <DrawerCloseButton />
-        <DrawerBody>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="#aboutSection">About</Link>
-            </li>
-            <li>
-              <Link to="/reservations">Reservations</Link>
-            </li>
-            <li>
-              <Link to="/">Order Online</Link>
-            </li>
-            <li>
-              <Link to="/">Login</Link>
-            </li>
-          </ul>
-        </DrawerBody>
-      </DrawerContent>
-    </Drawer>
+    <div>
+      <Box backgroundColor="#edefee">
+        <Drawer
+          anchor="left"
+          open={state}
+          onClose={toggleDrawer(false)}
+          backgroundColor="#edefee"
+        >
+          {list()}
+        </Drawer>
+      </Box>
+    </div>
   );
 }

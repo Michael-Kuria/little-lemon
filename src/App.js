@@ -4,11 +4,27 @@ import Reservations from "./components/Reservations";
 import BookingPage from "./components/bookings/BookingPage";
 import { Routes, Route } from "react-router-dom";
 import ConfirmedBooking from "./components/bookings/ConfirmedBooking";
+import SideMenu from "./components/SideMenu";
+import * as React from "react";
 
 function App() {
+  const [state, setState] = React.useState(true);
+
+  const toggleDrawer = (open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState(open);
+  };
+
   return (
     <>
-      <Header />
+      <SideMenu state={state} toggleDrawer={toggleDrawer} />
+      <Header toggleDrawer={toggleDrawer} />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

@@ -63,7 +63,7 @@ export default function MenuSection() {
         <div className="menu-section-header">
           <p className="title">This Week's Special</p>
           <div>
-            <button>Order Online</button>
+            <button className="btn">Order Online</button>
           </div>
         </div>
         <div className="menu-section-scroller">
