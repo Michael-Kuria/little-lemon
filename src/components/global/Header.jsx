@@ -3,7 +3,6 @@ import Nav from "./Nav";
 import "../../App.css";
 import { useWidth } from "../../Width";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useDisclosure } from "@chakra-ui/react";
 
 export default function Header({ toggleDrawer }) {
   const [hideNav] = useWidth();
@@ -19,7 +18,12 @@ export default function Header({ toggleDrawer }) {
           </div>
         )}
         <div>
-          <img src="/assets/Logo.png" width="" height="" alt="this is a logo" />
+          <img
+            src="/assets/Logo.png"
+            width=""
+            height=""
+            alt="littel lemon logo"
+          />
         </div>
       </div>
 

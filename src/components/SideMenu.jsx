@@ -30,13 +30,8 @@ export default function SideMenu({ state, toggleDrawer }) {
 
   return (
     <div>
-      <Box backgroundColor="#edefee">
-        <Drawer
-          anchor="left"
-          open={state}
-          onClose={toggleDrawer(false)}
-          backgroundColor="#edefee"
-        >
+      <Box>
+        <Drawer anchor="left" open={state} onClose={toggleDrawer(false)}>
           {list()}
         </Drawer>
       </Box>

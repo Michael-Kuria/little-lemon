@@ -49,12 +49,7 @@ const Review = ({ image, name, reviewText, noOfStars }) => {
               <div className="bold">{noOfStars}</div>
             </div>
             <div className="reviewer-image-container">
-              <img
-                src={image}
-                width=""
-                height=""
-                alt="this is a picture of a person"
-              />
+              <img src={image} width="" height="" alt={name} />
             </div>
           </div>
           <div className="bold">{name}</div>
@@ -75,8 +70,8 @@ export default function Testmonials() {
           <p className="title">Testimonials</p>
         </div>
         <div className="reviews-container">
-          {reviewers.map((item) => (
-            <Review {...item} />
+          {reviewers.map((item, index) => (
+            <Review key={index} {...item} />
           ))}
         </div>
       </div>

@@ -1,23 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../App.css";
 import { useWidth } from "../Width";
 
 export default function HeaderSection() {
-  // const [hideImage, setHideImage] = useState(true);
-
-  // useEffect(() => {
-  //   function handleResize() {
-  //     if (window.innerWidth < 750) {
-  //       setHideImage(false);
-  //     } else {
-  //       setHideImage(true);
-  //     }
-  //   }
-
-  //   window.addEventListener("resize", handleResize);
-  //   return () => window.removeEventListener("resize", handleResize);
-  // });
-
   const [hideImage] = useWidth();
 
   return (
@@ -43,7 +28,7 @@ export default function HeaderSection() {
             src="/assets/restauranfood.jpg"
             width=""
             height="500px"
-            alt="this is a picture of chef carriying food"
+            alt="Restaurant Food"
           />
         </div>
       )}

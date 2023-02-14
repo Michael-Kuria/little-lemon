@@ -4,7 +4,7 @@ const Menu = ({ image, foodName, foodDescription, price }) => {
   return (
     <div className="menu-container">
       <div className="menu-image">
-        <img src={image} width="" height="" alt="this is a picture of food" />
+        <img src={image} width="" height="" alt={foodName} />
       </div>
       <div className="food-description-container">
         <div className="food-price-container">
@@ -67,8 +67,8 @@ export default function MenuSection() {
           </div>
         </div>
         <div className="menu-section-scroller">
-          {food.map((item) => (
-            <Menu {...item} />
+          {food.map((item, index) => (
+            <Menu key={index} {...item} />
           ))}
         </div>
       </div>

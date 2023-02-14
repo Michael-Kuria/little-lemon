@@ -26,14 +26,14 @@ export default function AboutSection() {
             src="/assets/Mario and Adrian A.jpg"
             width="300px"
             height="300px"
-            alt="this is a picture of food"
+            alt="Mario and Adrian"
           />
           <img
             className="image2"
             src="/assets/Mario and Adrian B.jpg"
             width="300px"
             height="300px"
-            alt="this is a picture of food"
+            alt="Mario and Adrian"
           />
         </div>
       </div>
