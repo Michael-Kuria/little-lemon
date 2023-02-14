@@ -573,7 +573,7 @@ button:disabled {
   white-space: nowrap;
 }
 
-.footer-links-section ul li::after {
+.footer-links-section ul li a::after {
   content: "";
   display: block;
   position: absolute;
@@ -583,7 +583,7 @@ button:disabled {
   background-color: #edefee;
 }
 
-.footer-links-section ul li:hover::after {
+.footer-links-section ul li a:hover::after {
   width: 100%;
   transition: width 0.8s ease-in-out;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -19,11 +20,12 @@ export default function Footer() {
             </div>
             <div>
               <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Reservations</li>
-                <li>Order Online</li>
-                <li>Login</li>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/reservations">Book a table</Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -33,9 +35,9 @@ export default function Footer() {
             </div>
             <div>
               <ul>
-                <li>Address</li>
-                <li>Phone Number</li>
-                <li>Email</li>
+                <li>Chicago 1223</li>
+                <li>+ 12345678900</li>
+                <li>littelemon@gmail.com</li>
               </ul>
             </div>
           </div>
@@ -45,9 +47,15 @@ export default function Footer() {
             </div>
             <div>
               <ul>
-                <li>Twitter</li>
-                <li>Instagram</li>
-                <li>Facebook</li>
+                <li>
+                  <a>Twitter</a>
+                </li>
+                <li>
+                  <a>Instagram</a>
+                </li>
+                <li>
+                  <a>Facebook</a>
+                </li>
               </ul>
             </div>
           </div>

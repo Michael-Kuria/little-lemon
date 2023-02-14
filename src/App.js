@@ -1,6 +1,5 @@
 import Header from "./components/global/Header";
 import Home from "./components/Home";
-import Reservations from "./components/Reservations";
 import BookingPage from "./components/bookings/BookingPage";
 import { Routes, Route } from "react-router-dom";
 import ConfirmedBooking from "./components/bookings/ConfirmedBooking";
@@ -8,7 +7,7 @@ import SideMenu from "./components/SideMenu";
 import * as React from "react";
 
 function App() {
-  const [state, setState] = React.useState(true);
+  const [state, setState] = React.useState(false);
 
   const toggleDrawer = (open) => (event) => {
     if (

@@ -64,7 +64,7 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
           alignItems="center"
           paddingTop="2rem"
         >
-          <form onSubmit={formik.handleSubmit}>
+          <form onSubmit={submitForm}>
             <VStack className="form-inputs" alignItems="center" gap={4}>
               <FormControl
                 isInvalid={formik.touched.date && formik.errors.date}
@@ -124,10 +124,9 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
               <FormControl
                 isInvalid={formik.touched.occasion && formik.errors.occasion}
               >
-                <FormLabel htmlFor="occasion" id="occasion">
-                  *Seating Options
-                </FormLabel>
+                <FormLabel htmlFor="occasion">*Occasion</FormLabel>
                 <Select
+                  id="occasion"
                   placeholder="Select Occasion"
                   {...formik.getFieldProps("occasion")}
                 >

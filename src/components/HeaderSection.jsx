@@ -1,6 +1,7 @@
 import React from "react";
 import "../App.css";
 import { useWidth } from "../Width";
+import { Link } from "react-router-dom";
 
 export default function HeaderSection() {
   const [hideImage] = useWidth();
@@ -19,7 +20,9 @@ export default function HeaderSection() {
           </p>
         </div>
         <div>
-          <button className="btn">Reserve a table</button>
+          <button className="btn">
+            <Link to="/reservations">Book a table</Link>
+          </button>
         </div>
       </div>
       {hideImage && (

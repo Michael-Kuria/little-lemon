@@ -26,7 +26,7 @@ export default function Nav() {
           </a>
         </li>
         <li>
-          <Link to="/reservations">Reservations</Link>
+          <Link to="/reservations">Book a table</Link>
         </li>
         <li>
           <Link to="/#about" onClick={handleClick("about")}>
