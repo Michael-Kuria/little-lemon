@@ -68,26 +68,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-### What is to follow
-
-- Implementation of the form page -done
-- making the pages responsive, even on bigger screen - done
-- Cleaning up the menu section & testimonials in css - done
-- implemetation of navigation on the home page to the about section - Done
-- implement the drawer
-- Make buttons work
-- Updated the footer section
-
-Testing
-The next step is to validate the behavior of the updateTimes and initializeTimes reducer functions.
-
-    Write a unit test for the initializeTimes function to validate that it returns the correct expected value.
-
-    Write a unit test for the updateTimes function to validate that it returns the same value that is provided in the state. This unit test is important as it will be updated later when the logic of changing the available times based on the selected date is implemented.
-
-// change available times into useReducer();
-create unit test for initilize times, updatetimes and submit form
-
-- style the buttons to make them clickable - done
-- Unit tests for form fields
