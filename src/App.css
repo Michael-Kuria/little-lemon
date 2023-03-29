@@ -8,6 +8,7 @@
   margin: 0;
   /* font-family: 'Markazi Text', serif; */
   font-family: "Karla", sans-serif;
+  font-weight: 300;
 }
 
 .title {
@@ -20,6 +21,7 @@
   font-family: "Markazi Text", serif;
   font-size: 40px;
   white-space: nowrap;
+
 }
 
 /* Global responsive styles */
@@ -137,7 +139,7 @@ a {
 
 /* Main section start's here */
 main {
-  /* height: 100vh; */
+  height: 100%;
 }
 
 /* Header Section start's here */

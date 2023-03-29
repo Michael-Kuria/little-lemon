@@ -6,6 +6,11 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import { Link } from "react-router-dom";
 
+/**
+ * This component will be displayed on mobile devices, to provide access to links
+ * @param {*} param0
+ * @returns
+ */
 export default function SideMenu({ state, toggleDrawer }) {
   const list = () => (
     <Box
